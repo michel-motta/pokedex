@@ -18,4 +18,8 @@ export class PokemonService {
     const { results } = await lastValueFrom(this.httpClient.get<{ results: Pokemon[] }>(`https://pokeapi.co/api/v2/pokemon?limit=${this.numberOfPokemon}`));
     this.pokemon = results;
   }
+
+  async getPokemon(pokemonName: string): Promise<Pokemon> {
+    return await lastValueFrom(this.httpClient.get<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`));
+  }
 }
