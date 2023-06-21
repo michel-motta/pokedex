@@ -8,7 +8,7 @@ import { Pokemon } from '../interfaces/Pokemon';
 })
 export class PokemonService {
   pokemon: Pokemon[] = [];
-  numberOfPokemon: number = 151;
+  numberOfPokemon: number = 386;
 
   constructor(private httpClient: HttpClient) {
     this.getAllPokemon();
