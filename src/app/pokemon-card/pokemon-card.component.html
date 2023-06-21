@@ -1,6 +1,9 @@
-<div class="pokemon-card">
-  <p>#{{ idFormatted }}</p>
-  <img [src]="getPokemonImage()" width="200">
-  <br>
-  <b>{{ pokemon.name }}</b>
-</div>
+<main>
+  <header>
+    <p>#{{ id }}</p>
+  </header>
+  <img [src]="getPokemonImage()" width="150" height="130">
+  <footer>
+    <p>{{ pokemon.name }}</p>
+  </footer>
+</main>
