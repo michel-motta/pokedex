@@ -7,13 +7,14 @@ import { Pokemon } from '../interfaces/Pokemon';
   providedIn: 'root'
 })
 export class PokemonService {
-  pokemon: any;
+  pokemon: Pokemon[] = [];
   numberOfPokemon: number = 151;
+
   constructor(private httpClient: HttpClient) {
-    this.getPokemon();
+    this.getAllPokemon();
   }
 
-  async getPokemon(): Promise<void> {
+  async getAllPokemon(): Promise<void> {
     const { results } = await lastValueFrom(this.httpClient.get<{ results: Pokemon[] }>(`https://pokeapi.co/api/v2/pokemon?limit=${this.numberOfPokemon}`));
     this.pokemon = results;
   }
