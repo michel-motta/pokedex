@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
+import { Pokemon } from '../interfaces/Pokemon';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class PokemonService {
   }
 
   async getPokemon(): Promise<void> {
-    const { results } = await lastValueFrom(this.httpClient.get<{ results: Object[] }>(`https://pokeapi.co/api/v2/pokemon?limit=${this.numberOfPokemon}`));
+    const { results } = await lastValueFrom(this.httpClient.get<{ results: Pokemon[] }>(`https://pokeapi.co/api/v2/pokemon?limit=${this.numberOfPokemon}`));
     this.pokemon = results;
   }
 }
