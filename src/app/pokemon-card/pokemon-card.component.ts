@@ -11,18 +11,8 @@ export class PokemonCardComponent {
   pokemon!: Pokemon;
   @Input()
   id!: number;
-  idFormatted!: string;
 
   getPokemonImage(): string {
-     this.idFormatted = this.leadingZero(this.id);
-    return `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${this.idFormatted}.png`;
-  }
-
-  private leadingZero(str: string | number, size = 3): string {
-    let s = String(str);
-    while (s.length < (size || 2)) {
-      s = '0' + s;
-    }
-    return s;
+    return `https://img.pokemondb.net/artwork/original/${this.pokemon.name}-gen1-jp.jpg`;
   }
 }
