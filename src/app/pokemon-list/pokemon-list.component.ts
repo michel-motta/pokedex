@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PokemonService } from '../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -8,4 +9,6 @@ import { Component } from '@angular/core';
 export class PokemonListComponent {
 
   pokemons = ['Bulbasaur', 'Ivysaur', 'Venosaur'];
+  
+  constructor(public PokemonService: PokemonService) {}
 }
