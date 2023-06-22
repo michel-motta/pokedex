@@ -12,7 +12,11 @@ export class PokemonCardComponent {
   @Input()
   id!: number;
 
+  capitalize(word: string): string {
+    return  word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
   getPokemonImage(): string {
-    return `https://img.pokemondb.net/artwork/original/${this.pokemon.name}-gen1-jp.jpg`;
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.id}.png`;
   }
 }
